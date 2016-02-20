@@ -29,6 +29,7 @@
 
         function addParty() {
             vm.parties.$add(vm.newParty);
+            vm.newParty = new Party();
         }
     }
 
