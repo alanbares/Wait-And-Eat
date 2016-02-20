@@ -12,12 +12,23 @@
 
         //Points to data at Firebase
         var fireParties = new Firebase('https://waitandeat-alan.firebaseio.com/parties');
-        vm.parties = $firebaseArray(fireParties);
 
+        function Party() {
+            this.name = '';
+            this.phone = '';
+            this.size = '';
+            this.done = false;
+            this.notified = false;
+
+        }
+
+        // View model data
+        vm.newParty = new Party();
+        vm.parties = $firebaseArray(fireParties);
         vm.addParty = addParty;
 
         function addParty() {
-            vm.parties.$add('another');
+            vm.parties.$add(vm.newParty);
         }
     }
 
