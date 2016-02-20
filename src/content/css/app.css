@@ -2,8 +2,9 @@
 [Table of Contents]
 
 1. Starter Template
-2. waitList.html
-    2a. waitList forms
+2. waitList.html /#waitList
+    2a. waitList forms /#wlforms
+3. landing.html
 ------------------------------------------------------------------**/
 
 /* Starter template */
@@ -21,7 +22,11 @@ body {
     font-size: 63px;
 }
 
-/* waitList forms*/
+/* #waitList */
+
+
+/* #waitList forms */
+
 .party-form {
     margin-bottom: 20px;
 }
