@@ -34,9 +34,11 @@
             vm.parties.$add(vm.newParty);
             vm.newParty = new Party();
         }
+
         function removeParty(party) {
             vm.parties.$remove(party);
         }
+
         function sendTextMessage(party) {
             var newTextMessage = {
                 phoneNumber: party.phone,
