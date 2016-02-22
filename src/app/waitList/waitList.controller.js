@@ -8,9 +8,9 @@
     WaitListController.$inject = ['$firebaseArray'];
 
     function WaitListController($firebaseArray) {
-        var vm = this,
-            fireParties = new Firebase('https://waitandeat-alan.firebaseio.com/parties'),
-            fireTextMessages = new Firebase('https://waitandeat-alan.firebaseio.com/textMessages');
+        var vm = this;
+        var fireParties = new Firebase('https://waitandeat-alan.firebaseio.com/parties');
+        var fireTextMessages = new Firebase('https://waitandeat-alan.firebaseio.com/textMessages');
 
         function Party() {
             this.name = '';
@@ -18,7 +18,6 @@
             this.size = '';
             this.done = false;
             this.notified = false;
-
         }
 
         // View model methods
