@@ -8,11 +8,9 @@
     WaitListController.$inject = ['$firebaseArray'];
 
     function WaitListController($firebaseArray) {
-        var vm = this;
-
-        //Points to data at Firebase
-        var fireParties = new Firebase('https://waitandeat-alan.firebaseio.com/parties');
-        var fireTextMessages = new Firebase('https://waitandeat-alan.firebaseio.com/textMessages');
+        var vm = this,
+            fireParties = new Firebase('https://waitandeat-alan.firebaseio.com/parties'),
+            fireTextMessages = new Firebase('https://waitandeat-alan.firebaseio.com/textMessages');
 
         function Party() {
             this.name = '';
