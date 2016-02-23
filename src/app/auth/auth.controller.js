@@ -5,9 +5,9 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
 
-    AuthController.$inject = ['$firebaseAuth'];
+    AuthController.$inject = ['$location', '$firebaseAuth'];
 
-    function AuthController($firebaseAuth) {
+    function AuthController($location, $firebaseAuth) {
         var vm = this;
         var firebaseReference = new Firebase('https://waitandeat-alan.firebaseio.com/');
         var firebaseAuthObject = $firebaseAuth(firebaseReference);
@@ -43,6 +43,7 @@
         function logout() {
             console.log('Logging out');
             firebaseAuthObject.$unauth();
+            $location.path('/');
         }
     }
 
