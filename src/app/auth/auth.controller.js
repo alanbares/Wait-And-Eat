@@ -20,6 +20,7 @@
         // View model methods
         vm.register = register;
         vm.login = login;
+        vm.logout = logout;
 
         function register(user) {
             return firebaseAuthObject.$createUser(user)
@@ -38,6 +39,10 @@
             .catch(function(error){
                 console.log(error);
             });
+        }
+        function logout() {
+            console.log('Logging out');
+            firebaseAuthObject.$unauth();
         }
     }
 
