@@ -8,7 +8,7 @@
     function partyService() {
 
         var service = {
-            Party: Party;
+            Party: Party
         };
 
         return service;
