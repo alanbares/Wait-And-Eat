@@ -19,11 +19,11 @@
         ///////////////
 
         function Party() {
-        this.name = '';
-        this.phone = '';
-        this.size = '';
-        this.done = false;
-        this.notified = false;
+            this.name = '';
+            this.phone = '';
+            this.size = '';
+            this.done = false;
+            this.notified = false;
         }
     }
 })();
