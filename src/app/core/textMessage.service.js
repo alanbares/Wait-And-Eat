@@ -14,7 +14,7 @@
 
         return service;
 
-        //////////
+       ///////////////
 
        function sendTextMessage(party, parties) {
             var newTextMessage = {
