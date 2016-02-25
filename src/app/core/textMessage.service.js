@@ -25,6 +25,6 @@
             firebaseDataService.textMessages.push(newTextMessage);
             party.notified = true;
             parties.$save(party);
-    }
+        }
 }
 })();

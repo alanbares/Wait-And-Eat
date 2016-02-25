@@ -5,9 +5,9 @@
         .module('app.waitList')
         .controller('WaitListController', WaitListController);
 
-    WaitListController.$inject = ['firebaseDataService', 'partyService', 'sendTextMessageService'];
+    WaitListController.$inject = ['textMessageService', 'partyService'];
 
-    function WaitListController (firebaseDataService, partyService, sendTextMessageService) {
+    function WaitListController (textMessageService, partyService) {
         var vm = this;
 
         // View model methods
@@ -15,7 +15,7 @@
         vm.parties = partyService.parties;
         vm.addParty = addParty;
         vm.removeParty = removeParty;
-        vm.sendTextMessage = sendTextMessageService.sendTextMessage;
+        vm.sendTextMessage = sendTextMessage;
         vm.toggleDone = toggleDone;
 
         function addParty() {
@@ -28,14 +28,7 @@
         }
 
         function sendTextMessage(party) {
-            var newTextMessage = {
-                phoneNumber: party.phone,
-                size: party.size,
-                name: party.name
-            };
-            firebaseDataService.textMessages.push(newTextMessage);
-            party.notified = true;
-            vm.parties.$save(party);
+           textMessageService.sendTextMessage(party, vm.parties);
         }
 
         function toggleDone(party) {

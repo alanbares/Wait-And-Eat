@@ -12,7 +12,7 @@
 
         var service = {
             root: root,
-            texMessages: root.child('textMessages')
+            textMessages: root.child('textMessages')
         };
 
         return service;
