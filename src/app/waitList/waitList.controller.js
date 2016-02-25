@@ -10,12 +10,9 @@
     function WaitListController (textMessageService, partyService, user) {
         var vm = this;
 
-        // Log user to console
-        console.log(user);
-
         // View model methods
         vm.newParty = new partyService.Party();
-        vm.parties = partyService.parties;
+        vm.parties = partyService.getPartiesByUser(user.uid);
         vm.addParty = addParty;
         vm.removeParty = removeParty;
         vm.sendTextMessage = sendTextMessage;
