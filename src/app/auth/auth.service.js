@@ -38,7 +38,7 @@
             return firebaseAuthObject.$getAuth();
         }
 
-        function sendWelcomeEmail() {
+        function sendWelcomeEmail(emailAddress) {
             firebaseDataService.emails.push({
                emailAddress: emailAddress
             });
