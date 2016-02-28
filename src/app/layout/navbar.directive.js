@@ -3,7 +3,7 @@
 
     angular
         .module('app.layout')
-        .directive('abNavbar', abNavbar)
+        .directive('abNavbar', abNavbar);
 
     function abNavbar() {
         return {
