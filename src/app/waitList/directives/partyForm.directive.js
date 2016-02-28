@@ -18,6 +18,15 @@
     PartyFormController.$inject = ['partyService'];
 
     function PartyFormController(partyService) {
+        var vm = this;
 
+        vm.newParty = new partyService.Party();
+        vm.addParty = addParty;
+
+        function addParty() {
+            // Need a way to access vm.parties
+            // vm.parties.$add(vm.newParty);
+            vm.newParty = new partyService.Party();
+        }
     }
 })();
