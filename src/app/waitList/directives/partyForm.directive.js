@@ -9,9 +9,12 @@
         return {
             templateUrl: 'app/waitList/directives/partyForm.html',
             restrict: 'E',
-            controller: 'PartyFormController',
+            controller: PartyFormController,
             controllerAs: 'vm',
-            scope: {}
+            bindToController: true,
+            scope: {
+                parties: '='
+            }
         };
     }
 
@@ -24,8 +27,7 @@
         vm.addParty = addParty;
 
         function addParty() {
-            // Need a way to access vm.parties
-            // vm.parties.$add(vm.newParty);
+            vm.parties.$add(vm.newParty);
             vm.newParty = new partyService.Party();
         }
     }
