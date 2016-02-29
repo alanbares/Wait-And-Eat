@@ -14,6 +14,7 @@
             email: '',
             password: ''
         };
+        vm.error = null;
 
         // View model methods
         vm.register = register;
@@ -28,17 +29,18 @@
                     return authService.sendWelcomeEmail(user.email);
                 })
                 .catch(function(error) {
-                    console.log(error);
+                   vm.error = error;
                 });
         }
+
         function login(user) {
             return authService.login(user)
-            .then(function(loggedInUser) {
-                console.log(loggedInUser);
-            })
-            .catch(function(error){
-                console.log(error);
-            });
+                .then(function(loggedInUser) {
+                    console.log(loggedInUser);
+                })
+                .catch(function(error){
+                    vm.error = error;
+                });
         }
     }
 
