@@ -31,8 +31,8 @@
 
         function login(user) {
             return authService.login(user)
-                .then(function(loggedInUser) {
-                    console.log(loggedInUser);
+                .then(function() {
+                    $location.path('/waitlist');
                 })
                 .catch(function(error){
                     vm.error = error;
