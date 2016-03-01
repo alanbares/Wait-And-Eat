@@ -1,8 +1,7 @@
 <!--TODO: Add back specific action form ng-submit-->
 <form name="authForm" ng-submit="authForm.$valid" class="form-signin" novalidate>
 
-    <!--TODO: Add back form title -->
-    <h2 class="form-signin-heading"></h2>
+    <h2 class="form-signin-heading" ng-bind="vm.formTitle"></h2>
 
     <!--Server authentication error-->
     <p ng-show="vm.error" class="text-danger" ng-bind="vm.error"></p>
@@ -24,6 +23,5 @@
         <p ng-show="authForm.password.$error.required" class="text-danger">Password required</p>
     </div>
 
-    <!--TODO: Use form title for button text -->
-    <button class="btn btn-large btn-primary btn-block" type="submit"></button>
+    <button class="btn btn-large btn-primary btn-block" ng-bind="vm.formTitle" type="submit"></button>
 </form>
