@@ -1,12 +1,35 @@
-<form ng-submit="vm.addParty()" class="form-inline party-form">
+<form name="partyForm" ng-submit="partyForm.$valid && vm.addParty()" class="form-inline party-form" novalidate>
     <div class="form-group">
-        <input ng-model="vm.newParty.name" type="text" class="form-control" placeholder="Name" required>
+
+        <!--Name input -->
+        <input ng-model="vm.newParty.name" type="text" name="name" class="form-control" placeholder="Name" required>
+
+        <!--Name error -->
+        <div ng-show="partyForm.$submitted">
+            <p ng-show="partyForm.name.$error.required" class="text-danger">Name required</p>
+        </div>
+
     </div>
     <div class="form-group">
-        <input ng-model="vm.newParty.phone" type="text" class="form-control" placeholder="Phone" required>
+
+        <!--Phone input -->
+        <input ng-model="vm.newParty.phone" type="text" name="phone" class="form-control" placeholder="Phone" required>
+
+        <!--Phone error-->
+        <div ng-show="partyForm.$submitted">
+            <p ng-show="partyForm.phone.$error.required" class="text-danger">Phone number required</p>
+        </div>
     </div>
     <div class="form-group">
-        <input ng-model="vm.newParty.size" type="number" class="form-control" placeholder="Size of Party" required>
+
+        <!--Party input -->
+        <input ng-model="vm.newParty.size" type="number" name="party" class="form-control" placeholder="Size of Party" required>
+
+        <!--Party error-->
+        <div ng-show="partyForm.$submitted">
+            <p ng-show="partyForm.party.$error.required" class="text-danger">Party size required</p>
+        </div>
+
     </div>
     <button type="submit" class="btn btn-primary">Add party</button>
 </form>

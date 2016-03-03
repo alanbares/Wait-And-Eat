@@ -25,7 +25,7 @@
                     return authService.sendWelcomeEmail(user.email);
                 })
                 .catch(function(error) {
-                   vm.error = error;
+                    vm.error = error;
                 });
         }
 
