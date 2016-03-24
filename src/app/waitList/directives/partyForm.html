@@ -19,11 +19,12 @@
         <div ng-show="partyForm.$submitted">
             <p ng-show="partyForm.phone.$error.required" class="text-danger">Phone number required</p>
         </div>
+
     </div>
     <div class="form-group">
 
         <!--Party input -->
-        <input ng-model="vm.newParty.size" type="number" name="party" class="form-control" placeholder="Size of Party" required>
+        <input ng-model="vm.newParty.size" type="number" name="party" class="form-control" min="1" placeholder="Size of Party" required>
 
         <!--Party error-->
         <div ng-show="partyForm.$submitted">
@@ -31,5 +32,24 @@
         </div>
 
     </div>
-    <button type="submit" class="btn btn-primary">Add party</button>
+    <button type="submit" class="btn btn-primary party-align">Add party</button>
 </form>
+
+<!--
+<row>
+
+        <div ng-show="partyForm.$submitted">
+            <p ng-show="partyForm.name.$error.required" class="text-danger">Name required</p>
+        </div>
+
+
+        <div ng-show="partyForm.$submitted">
+            <p ng-show="partyForm.phone.$error.required" class="text-danger">Phone number required</p>
+        </div>
+
+
+		<div ng-show="partyForm.$submitted">
+			<p ng-show="partyForm.party.$error.required" class="text-danger">Party size required</p>
+		</div>
+</row>
+-->

@@ -27,10 +27,14 @@ body {
 #waitList
 ************/
 
-/* #waitList styles*/
+/* ab-party-form */
 
 .party-form {
     margin-bottom: 20px;
+}
+
+.party-align {
+	vertical-align: top;
 }
 
 /***********
