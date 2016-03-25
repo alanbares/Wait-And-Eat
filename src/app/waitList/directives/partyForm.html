@@ -1,55 +1,22 @@
-<form name="partyForm" ng-submit="partyForm.$valid && vm.addParty()" class="form-inline party-form" novalidate>
-    <div class="form-group">
+<form name="partyForm" ng-submit="partyForm.$valid && vm.addParty()" class="form-inline party-form" >
 
+    <div class="form-group">
         <!--Name input -->
-        <input ng-model="vm.newParty.name" type="text" name="name" class="form-control" placeholder="Name" required>
-
-        <!--Name error -->
-        <div ng-show="partyForm.$submitted">
-            <p ng-show="partyForm.name.$error.required" class="text-danger">Name required</p>
-        </div>
-
+        <input ng-model="vm.newParty.name" type="text" name="name" class="form-control ng-touched ng-dirty ng-valid-parse ng-valid ng-valid-required" placeholder="Name" required>
     </div>
-    <div class="form-group">
 
+    <div class="form-group">
         <!--Phone input -->
         <input ng-model="vm.newParty.phone" type="text" name="phone" class="form-control" placeholder="Phone" required>
-
-        <!--Phone error-->
-        <div ng-show="partyForm.$submitted">
-            <p ng-show="partyForm.phone.$error.required" class="text-danger">Phone number required</p>
-        </div>
-
     </div>
-    <div class="form-group">
 
+    <div class="form-group">
         <!--Party input -->
         <input ng-model="vm.newParty.size" type="number" name="party" class="form-control" min="1" placeholder="Size of Party" required>
-
-        <!--Party error-->
-        <div ng-show="partyForm.$submitted">
-            <p ng-show="partyForm.party.$error.required" class="text-danger">Party size required</p>
-        </div>
-
     </div>
+
     <button type="submit" class="btn btn-primary party-align">Add party</button>
+<!--    <span ng-show="partyForm.$submitted" class="text-danger">Please enter a valid phone number</span>-->
+
 </form>
 
-<!--
-<row>
-
-        <div ng-show="partyForm.$submitted">
-            <p ng-show="partyForm.name.$error.required" class="text-danger">Name required</p>
-        </div>
-
-
-        <div ng-show="partyForm.$submitted">
-            <p ng-show="partyForm.phone.$error.required" class="text-danger">Phone number required</p>
-        </div>
-
-
-		<div ng-show="partyForm.$submitted">
-			<p ng-show="partyForm.party.$error.required" class="text-danger">Party size required</p>
-		</div>
-</row>
--->
