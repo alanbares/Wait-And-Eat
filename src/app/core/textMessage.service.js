@@ -26,5 +26,5 @@
             party.notified = true;
             parties.$save(party);
         }
-}
+    }
 })();

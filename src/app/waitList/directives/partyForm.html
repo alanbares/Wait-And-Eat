@@ -7,7 +7,7 @@
 
     <div class="form-group">
         <!--Phone input -->
-        <input ng-model="vm.newParty.phone" type="text" name="phone" class="form-control" placeholder="Phone" required>
+        <input ng-model="vm.newParty.phone" ng-intl-tel-input data-default-country="us" type="tel" name="phone" class="form-control" placeholder="(101) 555-5555" required>
     </div>
 
     <div class="form-group">
@@ -16,7 +16,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary party-align">Add party</button>
-<!--    <span ng-show="partyForm.$submitted" class="text-danger">Please enter a valid phone number</span>-->
+    <span ng-show="partyForm.$submitted && partyForm.$error.ngIntlTelInput" class="text-danger ng-hide">Please enter a valid phone number</span>
 
 </form>
 
