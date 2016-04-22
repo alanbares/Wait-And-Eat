@@ -15,7 +15,7 @@
         'app.landing',
         'app.layout',
         'app.waitList',
-		'ngIntlTelInput'
+		    'ngIntlTelInput'
     ])
     .config(configFunction)
     .run(runFunction);
